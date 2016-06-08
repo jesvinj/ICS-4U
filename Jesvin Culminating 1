@@ -1,4 +1,140 @@
-This 
-is 
-a 
-test
+//Jesvin Joy
+//June 2nd, 2016
+//The purpose of this program is to turn DNA strands to RNA, to protein.
+
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+
+public class bio
+{
+    public static void main (String[] args)
+    {
+        //Variable Declaration
+        Scanner KGBReader = new Scanner(System.in);
+        String aminoAcids = "";
+        int i = 0;
+        int f = 0;
+        
+        //Welcome statment
+        System.out.println("");
+        System.out.println("********************************");
+        System.out.println("Welcome to Jesvin Joy's program!");
+        System.out.println("********************************");
+        System.out.println("");
+        
+        //Ask user for input
+        System.out.println ("Please input your code...");
+        String dna = KGBReader.next();
+        
+        //Seperating DNA code into 3 groups
+        while (i <= dna.length()-3)
+        {
+            System.out.println("Next codon: " + dna.substring(i,i+3));
+            aminoAcids  = aminoAcids + dna.substring (i,i+3);
+            aminoAcids = aminoAcids + " ";
+            System.out.println();
+            i = i + 3;
+        }
+        
+        //Transferring to newMethod
+        aminoacids(dna, i, f, aminoAcids);
+    }
+    public static void aminoacids (String dna, int i, int f, String aminoAcids)
+    {
+       //Turning DNA into amino acids
+        while (f <= dna.length()-3)
+        {
+            aminoAcids = aminoAcids.replaceAll("AGA","R");
+            aminoAcids = aminoAcids.replaceAll("TTT","F");
+            aminoAcids = aminoAcids.replaceAll("TTC","F");
+            aminoAcids = aminoAcids.replaceAll("TTA","L");
+            aminoAcids = aminoAcids.replaceAll("TTG","L");
+            aminoAcids = aminoAcids.replaceAll("TCT","S");
+            aminoAcids = aminoAcids.replaceAll("TCC","S");
+            aminoAcids = aminoAcids.replaceAll("TCA","S");
+            aminoAcids = aminoAcids.replaceAll("TCG","S");
+            aminoAcids = aminoAcids.replaceAll("TAT","Y");
+            aminoAcids = aminoAcids.replaceAll("TTC","Y");
+            aminoAcids = aminoAcids.replaceAll("TAA","STOP");
+            
+                if (aminoAcids == "STOP")
+            {
+                break;                                     
+            }        
+     
+            aminoAcids = aminoAcids.replaceAll("TAG","STOP");
+            aminoAcids = aminoAcids.replaceAll("TGT","C");
+            aminoAcids = aminoAcids.replaceAll("TGC","C");
+            aminoAcids = aminoAcids.replaceAll("TGA","STOP");
+            aminoAcids = aminoAcids.replaceAll("TGG","W");
+            aminoAcids = aminoAcids.replaceAll("CTT","L");
+            aminoAcids = aminoAcids.replaceAll("CTC","L");
+            aminoAcids = aminoAcids.replaceAll("CTA","L");
+            aminoAcids = aminoAcids.replaceAll("CTG","L");
+            aminoAcids = aminoAcids.replaceAll("CCT","P");
+            aminoAcids = aminoAcids.replaceAll("CCC","P");
+            aminoAcids = aminoAcids.replaceAll("CCA","P");
+            aminoAcids = aminoAcids.replaceAll("CTG","L");
+            aminoAcids = aminoAcids.replaceAll("CCT","P");
+            aminoAcids = aminoAcids.replaceAll("CCC","P");
+            aminoAcids = aminoAcids.replaceAll("CCA","P");
+            aminoAcids = aminoAcids.replaceAll("CCG","P");
+            aminoAcids = aminoAcids.replaceAll("CAT","H");
+            aminoAcids = aminoAcids.replaceAll("CAC","H");
+            aminoAcids = aminoAcids.replaceAll("CAA","Q");
+            aminoAcids = aminoAcids.replaceAll("CAG","Q");
+            aminoAcids = aminoAcids.replaceAll("CGT","R");
+            aminoAcids = aminoAcids.replaceAll("CGC","R");
+            aminoAcids = aminoAcids.replaceAll("CGA","R");
+            aminoAcids = aminoAcids.replaceAll("CGG","R");
+            aminoAcids = aminoAcids.replaceAll("ATT","I");
+            aminoAcids = aminoAcids.replaceAll("ATC","I");
+            aminoAcids = aminoAcids.replaceAll("ATA","I");
+            aminoAcids = aminoAcids.replaceAll("ATG","M");
+            aminoAcids = aminoAcids.replaceAll("ACT","T");
+            aminoAcids = aminoAcids.replaceAll("ACC","T");
+            aminoAcids = aminoAcids.replaceAll("ACA","T");
+            aminoAcids = aminoAcids.replaceAll("ACG","T");
+            aminoAcids = aminoAcids.replaceAll("AAG","K");
+            aminoAcids = aminoAcids.replaceAll("AAA","K");
+            aminoAcids = aminoAcids.replaceAll("AAC","N");
+            aminoAcids = aminoAcids.replaceAll("AAT","N");
+            aminoAcids = aminoAcids.replaceAll("AGT","S");
+            aminoAcids = aminoAcids.replaceAll("AGC","S");
+            aminoAcids = aminoAcids.replaceAll("AGA","R");
+            aminoAcids = aminoAcids.replaceAll("AGG","R");
+            aminoAcids = aminoAcids.replaceAll("GTT","V");
+            aminoAcids = aminoAcids.replaceAll("GTC","V");
+            aminoAcids = aminoAcids.replaceAll("GTA","V");
+            aminoAcids = aminoAcids.replaceAll("GTG","V");
+            aminoAcids = aminoAcids.replaceAll("GCG","A");
+            aminoAcids = aminoAcids.replaceAll("GCA","A");
+            aminoAcids = aminoAcids.replaceAll("GCA","A");
+            aminoAcids = aminoAcids.replaceAll("GCC","A");
+            aminoAcids = aminoAcids.replaceAll("GCT","A");
+            aminoAcids = aminoAcids.replaceAll("GAT","D");
+            aminoAcids = aminoAcids.replaceAll("GAC","D");
+            aminoAcids = aminoAcids.replaceAll("GAA","E");
+            aminoAcids = aminoAcids.replaceAll("GAG","E");
+            aminoAcids = aminoAcids.replaceAll("GGT","G");
+            aminoAcids = aminoAcids.replaceAll("GGC","G");
+            aminoAcids = aminoAcids.replaceAll("GGA","G");
+            aminoAcids = aminoAcids.replaceAll("GGG","G");
+            
+        
+            //Output
+            System.out.println(" ");
+            System.out.println("Result of replacing the codons..." + aminoAcids);
+            System.out.println("");
+        
+            //Goodbye Statement
+            System.out.println("**************************************************");
+            System.out.println("Thank you for using Jesvin Joy's program! Goodbye!");
+            System.out.println("**************************************************");
+        
+       }
+       
+      
+    }
+}
