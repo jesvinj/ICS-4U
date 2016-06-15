@@ -1,0 +1,43 @@
+//Jesvin Joy
+//June 10th, 2016
+//The purpose of this program is to play the desired number of rounds of rock-paper-scissors with the users. 
+
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+import java.util.Scanner.*;
+
+/**
+ * Computer plays Rock Paper Scissors against one player
+ */
+
+public class RPS2{
+    public static void main (String[] args) {
+        RPSGame rps = new RPSGame();
+        RPSPlayer rpsOpponent = new RPSPlayer();
+        int rounds;
+        int playerThrow;
+        Scanner input = new Scanner(System.in);
+        Scanner kbReader = new Scanner(System.in);
+        String name;
+        
+        System.out.println("Hello player. What is your name?");
+        name = kbReader.nextLine();
+        rpsOpponent.assignName(name);
+        
+        rpsOpponent.getName(); 
+        
+        /* play RPS */
+        System.out.println("Hello " + (name) + ", please enter the number of rounds you would like to play...");
+        rounds = input.nextInt();
+        for (int i = 0; i < rounds; i++) {
+            System.out.println("So, " + (name) + ", what is your move? Enter 1 for Rock, 2 for Paper, or 3 for Scissors");
+            playerThrow = input.nextInt();
+            rpsOpponent.makeThrow(playerThrow);
+            
+            rps.makeCompThrow();
+            rps.announceWinner(rpsOpponent.getThrow(), rpsOpponent.getName());
+        }
+        rps.bigWinner(rpsOpponent.getName());
+    }
+}
