@@ -1,0 +1,60 @@
+//Jesvin Joy
+//June 10th, 2016
+//The purpose of this program is to play the desired number of rounds of rock-paper-scissors with the users. 
+
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+import java.util.Scanner.*;
+
+/**
+ * models the player in a game of RPS
+ */
+
+public class RPSPlayer
+{
+    private int playerThrow;
+    private String playerName;
+    
+    public void assignName (String name){
+        playerName = name;
+    }
+    
+    public String getName (){
+        return (playerName);
+    }
+
+    /**
+     * Constructor for objects of class RPSPlayer
+     * pre: none
+     * post: RPSPlayer object created. The player is given a default throw.
+     */   
+    
+    public RPSPlayer()
+    {
+        //default throw
+        playerThrow = 1;
+    }
+
+    /**
+     * Set's the player's throw.
+     * pre: newThrow is the integer 1, 2, or 3.
+     * post: Player's throw has been made. 
+     */
+    
+    public void makeThrow(int newThrow)
+    {
+        playerThrow = newThrow;
+    }
+    
+    /**
+     * Return's the player's throw.
+     * pre: none
+     * post: Player's throw has been returned.
+     */
+    public int getThrow()
+    {
+        return(playerThrow);
+    }
+    
+}
